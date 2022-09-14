@@ -40,7 +40,10 @@ func main() {
 				"Name": pulumi.String("my-test-222-elasticache-redis-simple"),
 			},
 			TransitEncryptionEnabled: pulumi.Bool(true),
-		}, pulumi.Protect(true))
+		}, pulumi.Import(pulumi.ID("my-test-222-elasticache-redis-simple")),
+		)
+		//pulumi.Protect(true))
+
 		if err != nil {
 			return err
 		}
