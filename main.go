@@ -6,8 +6,8 @@ import (
 )
 
 func main() {
-	/*
-		pulumi import aws:elasticache/replicationGroup:ReplicationGroup imported-pulumi-stack-my-test-222-elasticache-redis-simple my-test-222-elasticache-redis-simple
+	/* note: **NOT** use cmd import.
+	pulumi import aws:elasticache/replicationGroup:ReplicationGroup imported-pulumi-stack-my-test-222-elasticache-redis-simple my-test-222-elasticache-redis-simple
 	*/
 	pulumi.Run(func(ctx *pulumi.Context) error {
 		_, err := elasticache.NewReplicationGroup(ctx, "imported-pulumi-stack-my-test-222-elasticache-redis-simple", &elasticache.ReplicationGroupArgs{
