@@ -46,8 +46,8 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 		AutoMinorVersionUpgrade:  pulumi.Bool(true),
 		AutomaticFailoverEnabled: pulumi.Bool(true),
 
-		Description: pulumi.String("Originally Managed by Terraform, use NumNodeGroups instead of NumCacheClusters v4"),
-		NodeType:    pulumi.String("cache.r6g.large"),
+		//Description: pulumi.String("Originally Managed by Terraform, use NumNodeGroups instead of NumCacheClusters v4"),
+		//NodeType:    pulumi.String("cache.r6g.large"),
 		//NumNodeGroups:        pulumi.Int(1),
 		//Port:                 pulumi.Int(6379),
 		//ReplicasPerNodeGroup: pulumi.Int(1),
@@ -71,19 +71,19 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 	}
 
 	/*
-			// TODO: see if we still need to set this when using DD's elasticache module!!!!
-			rgConfig.AtRestEncryptionEnabled = pulumi.Bool(true)
-			// TODO: see if we still need to set this when using DD's elasticache module!!!!
-			rgConfig.AutoMinorVersionUpgrade = pulumi.Bool(true)
+		// TODO: see if we still need to set this when using DD's elasticache module!!!!
+		rgConfig.AtRestEncryptionEnabled = pulumi.Bool(true)
+		// TODO: see if we still need to set this when using DD's elasticache module!!!!
+		rgConfig.AutoMinorVersionUpgrade = pulumi.Bool(true)
 
-			//rgConfig.AutomaticFailoverEnabled = pulumi.Bool(automaticFailoverEnabled)
-			rgConfig.AutomaticFailoverEnabled = pulumi.Bool(true)
-
-			// Required
-			rgConfig.Description = pulumi.String("This was a TF stack originally Managed by Terraform, now managed by DD pulumi-projects")
-
-		rgConfig.NodeType = pulumi.String("cache.r6g.large")
+		//rgConfig.AutomaticFailoverEnabled = pulumi.Bool(automaticFailoverEnabled)
+		rgConfig.AutomaticFailoverEnabled = pulumi.Bool(true)
 	*/
+	// Required
+	rgConfig.Description = pulumi.String("This was a TF stack originally Managed by Terraform, now managed by DD pulumi-projects -- new v5")
+
+	rgConfig.NodeType = pulumi.String("cache.r6g.large")
+
 	rgConfig.NumNodeGroups = pulumi.Int(1)
 
 	// TODO: see if we still need to set this when using DD's elasticache module!!!!
