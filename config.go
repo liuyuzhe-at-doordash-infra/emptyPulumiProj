@@ -40,37 +40,34 @@ const (
 func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGroupArgs, err error) {
 	//cfg := config.New(ctx, "")
 	//rgConfig = defaultReplicationGroupConfig()
+
 	rgConfig = &elasticache.ReplicationGroupArgs{
 		AtRestEncryptionEnabled:  pulumi.Bool(true),
 		AutoMinorVersionUpgrade:  pulumi.Bool(true),
 		AutomaticFailoverEnabled: pulumi.Bool(true),
-		//ClusterMode: &elasticache.ReplicationGroupClusterModeArgs{
-		//	NumNodeGroups:        pulumi.Int(1),
-		//	ReplicasPerNodeGroup: pulumi.Int(1),
-		//},
-		Description:       pulumi.String("Originally Managed by Terraform, use NumNodeGroups instead of NumCacheClusters"),
-		EngineVersion:     pulumi.String("5.0.6"),
-		MaintenanceWindow: pulumi.String("tue:23:30-wed:00:30"),
-		NodeType:          pulumi.String("cache.r6g.large"),
-		//NumCacheClusters:  pulumi.Int(2),
-		NumNodeGroups: pulumi.Int(1),
-		//NumberCacheClusters:  pulumi.Int(2),
-		ParameterGroupName:   pulumi.String("my-test-222-elasticache-redis-simple"),
+
+		Description:          pulumi.String("Originally Managed by Terraform, use NumNodeGroups instead of NumCacheClusters v2"),
+		NodeType:             pulumi.String("cache.r6g.large"),
+		NumNodeGroups:        pulumi.Int(1),
 		Port:                 pulumi.Int(6379),
 		ReplicasPerNodeGroup: pulumi.Int(1),
-		//ReplicationGroupDescription: pulumi.String("Managed by Terraform"),
-		ReplicationGroupId: pulumi.String("my-test-222-elasticache-redis-simple"),
+		ReplicationGroupId:   pulumi.String("my-test-222-elasticache-redis-simple"),
 		SecurityGroupIds: pulumi.StringArray{
 			pulumi.String("sg-0b39791f9f42c6de8"),
 		},
 		SnapshotRetentionLimit: pulumi.Int(30),
-		SnapshotWindow:         pulumi.String("06:00-07:00"),
 		SubnetGroupName:        pulumi.String("my-test-222-elasticache-redis-simple"),
 		Tags: pulumi.StringMap{
 			"Name": pulumi.String("my-test-222-elasticache-redis-simple"),
 		},
 		TransitEncryptionEnabled: pulumi.Bool(true),
 		MultiAzEnabled:           pulumi.Bool(true),
+		EngineVersion:            pulumi.String("5.0.6"),
+		MaintenanceWindow:        pulumi.String("tue:23:30-wed:00:30"),
+
+		ParameterGroupName: pulumi.String("my-test-222-elasticache-redis-simple"),
+
+		SnapshotWindow: pulumi.String("06:00-07:00"),
 	}
 
 	/*
