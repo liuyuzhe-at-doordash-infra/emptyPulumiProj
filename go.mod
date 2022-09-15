@@ -1,4 +1,4 @@
-module github.com/doordash/pulumi-projects/go
+module emptyPulumiProj
 
 go 1.16
 

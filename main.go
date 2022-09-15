@@ -17,7 +17,7 @@ func main() {
 		//isImport := cfg.GetBool("is_import")
 		isImport := true // force to test
 		if isImport {
-			println("### Importing ElastiCache ###")
+			fmt.Println("### Importing ElastiCache ###")
 
 			// import elasticache
 			importRgCfg, importErr := ConfigWithImport(ctx)
@@ -35,10 +35,10 @@ func main() {
 				return errors.Wrap(importErr, "error importing the existing replication group")
 			}
 
-			println("importRg.ConfigurationEndpointAddress: %v", importRg.ConfigurationEndpointAddress)
-			println("importRg.EngineVersionActual: %v", importRg.EngineVersionActual)
+			fmt.Printf("importRg.ConfigurationEndpointAddress: %v", importRg.ConfigurationEndpointAddress)
+			fmt.Printf("importRg.EngineVersionActual: %v", importRg.EngineVersionActual)
 		} else {
-			println("### Creating ElastiCache ###")
+			fmt.Println("### Creating ElastiCache ###")
 
 			// create elasticache
 			rgCfg, err := ConfigWithDefaults(ctx)

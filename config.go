@@ -1,4 +1,4 @@
-package emptyPulumiProj
+package main
 
 import (
 	"github.com/pulumi/pulumi-aws/sdk/v5/go/aws/elasticache"
