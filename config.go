@@ -81,7 +81,7 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 	rgConfig.AutomaticFailoverEnabled = pulumi.Bool(true)
 
 	// Required
-	rgConfig.Description = pulumi.String("This was a TF stack originally Managed by Terraform, now managed by DD pulumi-projects -- new v5")
+	rgConfig.Description = pulumi.String("This was a TF stack originally Managed by Terraform, now managed by DD pulumi-projects -- new v6")
 
 	rgConfig.NodeType = pulumi.String("cache.r6g.large")
 
