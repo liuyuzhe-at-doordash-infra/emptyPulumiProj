@@ -41,8 +41,8 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 	//cfg := config.New(ctx, "")
 	//rgConfig = defaultReplicationGroupConfig()
 
-	// TODO: see if we still need to set this when using DD's elasticache module!!!!
-	rgConfig.AtRestEncryptionEnabled = pulumi.Bool(true)
+	// TODO: see if we still need to set this when using DD's elasticache module!!!!  --- NO ???
+	//rgConfig.AtRestEncryptionEnabled = pulumi.Bool(true)
 	// TODO: see if we still need to set this when using DD's elasticache module!!!!
 	rgConfig.AutoMinorVersionUpgrade = pulumi.Bool(true)
 
