@@ -43,8 +43,8 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 
 	// TODO: see if we still need to set this when using DD's elasticache module!!!!  --- NO ???
 	//rgConfig.AtRestEncryptionEnabled = pulumi.Bool(true)
-	// TODO: see if we still need to set this when using DD's elasticache module!!!!
-	rgConfig.AutoMinorVersionUpgrade = pulumi.Bool(true)
+	// TODO: see if we still need to set this when using DD's elasticache module!!!!  --- NO ???
+	//rgConfig.AutoMinorVersionUpgrade = pulumi.Bool(true)
 
 	//rgConfig.AutomaticFailoverEnabled = pulumi.Bool(automaticFailoverEnabled)
 	rgConfig.AutomaticFailoverEnabled = pulumi.Bool(true)
