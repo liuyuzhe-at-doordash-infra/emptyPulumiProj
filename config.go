@@ -46,15 +46,15 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 		AutoMinorVersionUpgrade:  pulumi.Bool(true),
 		AutomaticFailoverEnabled: pulumi.Bool(true),
 
-		Description:          pulumi.String("Originally Managed by Terraform, use NumNodeGroups instead of NumCacheClusters v3"),
-		NodeType:             pulumi.String("cache.r6g.large"),
-		NumNodeGroups:        pulumi.Int(1),
-		Port:                 pulumi.Int(6379),
-		ReplicasPerNodeGroup: pulumi.Int(1),
-		ReplicationGroupId:   pulumi.String("my-test-222-elasticache-redis-simple"),
-		SecurityGroupIds: pulumi.StringArray{
-			pulumi.String("sg-0b39791f9f42c6de8"),
-		},
+		Description: pulumi.String("Originally Managed by Terraform, use NumNodeGroups instead of NumCacheClusters v4"),
+		NodeType:    pulumi.String("cache.r6g.large"),
+		//NumNodeGroups:        pulumi.Int(1),
+		//Port:                 pulumi.Int(6379),
+		//ReplicasPerNodeGroup: pulumi.Int(1),
+		//ReplicationGroupId:   pulumi.String("my-test-222-elasticache-redis-simple"),
+		//SecurityGroupIds: pulumi.StringArray{
+		//	pulumi.String("sg-0b39791f9f42c6de8"),
+		//},
 		//SnapshotRetentionLimit: pulumi.Int(30),
 		//SubnetGroupName:        pulumi.String("my-test-222-elasticache-redis-simple"),
 		//Tags: pulumi.StringMap{
@@ -71,33 +71,32 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 	}
 
 	/*
+			// TODO: see if we still need to set this when using DD's elasticache module!!!!
+			rgConfig.AtRestEncryptionEnabled = pulumi.Bool(true)
+			// TODO: see if we still need to set this when using DD's elasticache module!!!!
+			rgConfig.AutoMinorVersionUpgrade = pulumi.Bool(true)
 
-		// TODO: see if we still need to set this when using DD's elasticache module!!!!
-		rgConfig.AtRestEncryptionEnabled = pulumi.Bool(true)
-		// TODO: see if we still need to set this when using DD's elasticache module!!!!
-		rgConfig.AutoMinorVersionUpgrade = pulumi.Bool(true)
+			//rgConfig.AutomaticFailoverEnabled = pulumi.Bool(automaticFailoverEnabled)
+			rgConfig.AutomaticFailoverEnabled = pulumi.Bool(true)
 
-		//rgConfig.AutomaticFailoverEnabled = pulumi.Bool(automaticFailoverEnabled)
-		rgConfig.AutomaticFailoverEnabled = pulumi.Bool(true)
-
-		// Required
-		rgConfig.Description = pulumi.String("This was a TF stack originally Managed by Terraform, now managed by DD pulumi-projects")
+			// Required
+			rgConfig.Description = pulumi.String("This was a TF stack originally Managed by Terraform, now managed by DD pulumi-projects")
 
 		rgConfig.NodeType = pulumi.String("cache.r6g.large")
-
-		rgConfig.NumNodeGroups = pulumi.Int(1)
-
-		// TODO: see if we still need to set this when using DD's elasticache module!!!!
-		rgConfig.Port = pulumi.Int(6379)
-
-		rgConfig.ReplicasPerNodeGroup = pulumi.Int(1)
-
-		rgConfig.ReplicationGroupId = pulumi.String("my-test-222-elasticache-redis-simple")
-
-		rgConfig.SecurityGroupIds = pulumi.StringArray{
-			pulumi.String("sg-0b39791f9f42c6de8"),
-		}
 	*/
+	rgConfig.NumNodeGroups = pulumi.Int(1)
+
+	// TODO: see if we still need to set this when using DD's elasticache module!!!!
+	rgConfig.Port = pulumi.Int(6379)
+
+	rgConfig.ReplicasPerNodeGroup = pulumi.Int(1)
+
+	rgConfig.ReplicationGroupId = pulumi.String("my-test-222-elasticache-redis-simple")
+
+	rgConfig.SecurityGroupIds = pulumi.StringArray{
+		pulumi.String("sg-0b39791f9f42c6de8"),
+	}
+
 	rgConfig.SnapshotRetentionLimit = pulumi.Int(30)
 
 	rgConfig.SubnetGroupName = pulumi.String("my-test-222-elasticache-redis-simple")
