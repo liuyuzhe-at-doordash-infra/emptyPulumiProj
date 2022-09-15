@@ -36,7 +36,7 @@ func main() {
 			}
 
 			fmt.Printf("importRg.ConfigurationEndpointAddress: %v", importRg.ConfigurationEndpointAddress)
-			fmt.Printf("importRg.EngineVersionActual: %v", importRg.EngineVersionActual)
+			//fmt.Printf("importRg.EngineVersionActual: %v", importRg.EngineVersionActual)
 		} else {
 			fmt.Println("### Creating ElastiCache ###")
 
