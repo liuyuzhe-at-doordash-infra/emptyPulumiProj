@@ -1,0 +1,3 @@
+name: aws-elasticache-cluster
+runtime: go
+description: A clustered Redis cache
