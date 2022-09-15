@@ -1,4 +1,4 @@
-module emptyPulumiProj
+module emptyPulumiProj/go
 
 go 1.16
 
