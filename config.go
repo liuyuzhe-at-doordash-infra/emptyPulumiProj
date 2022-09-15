@@ -55,22 +55,23 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 		SecurityGroupIds: pulumi.StringArray{
 			pulumi.String("sg-0b39791f9f42c6de8"),
 		},
-		SnapshotRetentionLimit: pulumi.Int(30),
-		SubnetGroupName:        pulumi.String("my-test-222-elasticache-redis-simple"),
-		Tags: pulumi.StringMap{
-			"Name": pulumi.String("my-test-222-elasticache-redis-simple"),
-		},
-		TransitEncryptionEnabled: pulumi.Bool(true),
-		MultiAzEnabled:           pulumi.Bool(true),
-		EngineVersion:            pulumi.String("5.0.6"),
-		MaintenanceWindow:        pulumi.String("tue:23:30-wed:00:30"),
-
-		ParameterGroupName: pulumi.String("my-test-222-elasticache-redis-simple"),
-
-		SnapshotWindow: pulumi.String("06:00-07:00"),
+		//SnapshotRetentionLimit: pulumi.Int(30),
+		//SubnetGroupName:        pulumi.String("my-test-222-elasticache-redis-simple"),
+		//Tags: pulumi.StringMap{
+		//	"Name": pulumi.String("my-test-222-elasticache-redis-simple"),
+		//},
+		//TransitEncryptionEnabled: pulumi.Bool(true),
+		//MultiAzEnabled:           pulumi.Bool(true),
+		//EngineVersion:            pulumi.String("5.0.6"),
+		//MaintenanceWindow:        pulumi.String("tue:23:30-wed:00:30"),
+		//
+		//ParameterGroupName: pulumi.String("my-test-222-elasticache-redis-simple"),
+		//
+		//SnapshotWindow: pulumi.String("06:00-07:00"),
 	}
 
 	/*
+
 		// TODO: see if we still need to set this when using DD's elasticache module!!!!
 		rgConfig.AtRestEncryptionEnabled = pulumi.Bool(true)
 		// TODO: see if we still need to set this when using DD's elasticache module!!!!
@@ -96,35 +97,35 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 		rgConfig.SecurityGroupIds = pulumi.StringArray{
 			pulumi.String("sg-0b39791f9f42c6de8"),
 		}
-
-		rgConfig.SnapshotRetentionLimit = pulumi.Int(30)
-
-		rgConfig.SubnetGroupName = pulumi.String("my-test-222-elasticache-redis-simple")
-
-		rgConfig.Tags = pulumi.StringMap{
-			"Name": pulumi.String("my-test-222-elasticache-redis-simple"),
-		}
-
-		// TODO: see if we still need to set this when using DD's elasticache module!!!!
-		rgConfig.TransitEncryptionEnabled = pulumi.Bool(true)
-
-		// TODO: see if we still need to set this when using DD's elasticache module!!!!
-		//rgConfig.MultiAzEnabled = pulumi.Bool(multiAzEnabled)
-		rgConfig.MultiAzEnabled = pulumi.Bool(true)
-
-		// Optional
-
-		//rgConfig.EngineVersion = pulumi.String(engineVersion)
-		rgConfig.EngineVersion = pulumi.String("5.0.6")
-
-		//rgConfig.MaintenanceWindow = pulumi.String(maintenanceWindow)
-		rgConfig.MaintenanceWindow = pulumi.String("tue:23:30-wed:00:30")
-
-		rgConfig.ParameterGroupName = pulumi.String("my-test-222-elasticache-redis-simple")
-
-		//rgConfig.SnapshotWindow = pulumi.String(snapshotWindow)
-		rgConfig.SnapshotWindow = pulumi.String("06:00-07:00")
 	*/
+	rgConfig.SnapshotRetentionLimit = pulumi.Int(30)
+
+	rgConfig.SubnetGroupName = pulumi.String("my-test-222-elasticache-redis-simple")
+
+	rgConfig.Tags = pulumi.StringMap{
+		"Name": pulumi.String("my-test-222-elasticache-redis-simple"),
+	}
+
+	// TODO: see if we still need to set this when using DD's elasticache module!!!!
+	rgConfig.TransitEncryptionEnabled = pulumi.Bool(true)
+
+	// TODO: see if we still need to set this when using DD's elasticache module!!!!
+	//rgConfig.MultiAzEnabled = pulumi.Bool(multiAzEnabled)
+	rgConfig.MultiAzEnabled = pulumi.Bool(true)
+
+	// Optional
+
+	//rgConfig.EngineVersion = pulumi.String(engineVersion)
+	rgConfig.EngineVersion = pulumi.String("5.0.6")
+
+	//rgConfig.MaintenanceWindow = pulumi.String(maintenanceWindow)
+	rgConfig.MaintenanceWindow = pulumi.String("tue:23:30-wed:00:30")
+
+	rgConfig.ParameterGroupName = pulumi.String("my-test-222-elasticache-redis-simple")
+
+	//rgConfig.SnapshotWindow = pulumi.String(snapshotWindow)
+	rgConfig.SnapshotWindow = pulumi.String("06:00-07:00")
+
 	//// ApplyImmediately
 	//if cfg.GetBool("apply_immediately") {
 	//	rgConfig.ApplyImmediately = pulumi.Bool(true)
