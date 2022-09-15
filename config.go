@@ -42,7 +42,7 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 	//rgConfig = defaultReplicationGroupConfig()
 
 	rgConfig = &elasticache.ReplicationGroupArgs{
-		AtRestEncryptionEnabled: pulumi.Bool(true),
+		//AtRestEncryptionEnabled: pulumi.Bool(true),
 		//AutoMinorVersionUpgrade:  pulumi.Bool(true),
 		//AutomaticFailoverEnabled: pulumi.Bool(true),
 
@@ -70,10 +70,9 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 		//SnapshotWindow: pulumi.String("06:00-07:00"),
 	}
 
-	/*
-		// TODO: see if we still need to set this when using DD's elasticache module!!!!
-		rgConfig.AtRestEncryptionEnabled = pulumi.Bool(true)
-	*/
+	// TODO: see if we still need to set this when using DD's elasticache module!!!!
+	rgConfig.AtRestEncryptionEnabled = pulumi.Bool(true)
+
 	// TODO: see if we still need to set this when using DD's elasticache module!!!!
 	rgConfig.AutoMinorVersionUpgrade = pulumi.Bool(true)
 
@@ -81,7 +80,7 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 	rgConfig.AutomaticFailoverEnabled = pulumi.Bool(true)
 
 	// Required
-	rgConfig.Description = pulumi.String("This was a TF stack originally Managed by Terraform, now managed by DD pulumi-projects -- new v6")
+	rgConfig.Description = pulumi.String("This was a TF stack originally Managed by Terraform, now managed by DD pulumi-projects -- new v7")
 
 	rgConfig.NodeType = pulumi.String("cache.r6g.large")
 
