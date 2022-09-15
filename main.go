@@ -12,7 +12,7 @@ import (
 
 func main() {
 	pulumi.Run(func(ctx *pulumi.Context) error {
-		cfg := config.New(ctx, "")
+		//cfg := config.New(ctx, "")
 
 		//isImport := cfg.GetBool("is_import")
 		isImport := true // force to test
@@ -41,6 +41,8 @@ func main() {
 			fmt.Println("### Creating ElastiCache ###")
 
 			// create elasticache
+			cfg := config.New(ctx, "")
+
 			rgCfg, err := ConfigWithDefaults(ctx)
 			if err != nil {
 				return errors.Wrap(err, "error building default config")
