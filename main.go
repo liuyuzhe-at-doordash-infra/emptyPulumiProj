@@ -18,7 +18,7 @@ func main() {
 			//	NumNodeGroups:        pulumi.Int(1),
 			//	ReplicasPerNodeGroup: pulumi.Int(1),
 			//},
-			Description:       pulumi.String("Originally Managed by Terraform"),
+			Description:       pulumi.String("Originally Managed by Terraform, use NumNodeGroups instead of NumCacheClusters"),
 			EngineVersion:     pulumi.String("5.0.6"),
 			MaintenanceWindow: pulumi.String("tue:23:30-wed:00:30"),
 			NodeType:          pulumi.String("cache.r6g.large"),
