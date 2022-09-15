@@ -53,7 +53,7 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 	//rgConfig.AutomaticFailoverEnabled = pulumi.Bool(true)
 
 	// Required
-	rgConfig.Description = pulumi.String("This was a TF stack originally Managed by Terraform, now managed by DD pulumi-projects -- new v9")
+	rgConfig.Description = pulumi.String("This was a TF stack originally Managed by Terraform, now managed by DD pulumi-projects -- new v10")
 
 	rgConfig.NodeType = pulumi.String("cache.r6g.large")
 
@@ -90,8 +90,8 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 	rgConfig.EngineVersion = pulumi.String(engineVersion)
 	//rgConfig.EngineVersion = pulumi.String("5.0.6")
 
-	//rgConfig.MaintenanceWindow = pulumi.String(maintenanceWindow)
-	rgConfig.MaintenanceWindow = pulumi.String("tue:23:30-wed:00:30")
+	rgConfig.MaintenanceWindow = pulumi.String(maintenanceWindow)
+	//rgConfig.MaintenanceWindow = pulumi.String("tue:23:30-wed:00:30")
 
 	rgConfig.ParameterGroupName = pulumi.String("my-test-222-elasticache-redis-simple")
 
