@@ -46,7 +46,7 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 		AutoMinorVersionUpgrade:  pulumi.Bool(true),
 		AutomaticFailoverEnabled: pulumi.Bool(true),
 
-		Description:          pulumi.String("Originally Managed by Terraform, use NumNodeGroups instead of NumCacheClusters v2"),
+		Description:          pulumi.String("Originally Managed by Terraform, use NumNodeGroups instead of NumCacheClusters v3"),
 		NodeType:             pulumi.String("cache.r6g.large"),
 		NumNodeGroups:        pulumi.Int(1),
 		Port:                 pulumi.Int(6379),
