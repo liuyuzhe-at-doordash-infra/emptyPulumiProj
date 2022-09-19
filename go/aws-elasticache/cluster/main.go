@@ -60,7 +60,8 @@ func main() {
 	pulumi.Run(func(ctx *pulumi.Context) error {
 		cfg := config.New(ctx, "")
 
-		rgCfg, err := ConfigWithDefaults(ctx)
+		//rgCfg, err := ConfigWithDefaults(ctx)
+		rgCfg, err := ConfigWithImport(ctx)
 		if err != nil {
 			return errors.Wrap(err, "error building config")
 		}
@@ -102,8 +103,7 @@ func playFunc(ctx *pulumi.Context) error {
 
 	cfg := config.New(ctx, "")
 
-	//rgCfg, err := ConfigWithDefaults(ctx)
-	rgCfg, err := ConfigWithImport(ctx)
+	rgCfg, err := ConfigWithDefaults(ctx)
 	if err != nil {
 		return errors.Wrap(err, "error building config")
 	}
