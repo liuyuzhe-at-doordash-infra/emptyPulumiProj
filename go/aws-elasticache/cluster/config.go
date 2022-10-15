@@ -44,18 +44,18 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 	rgConfig = &elasticache.ReplicationGroupArgs{}
 
 	// TODO: see if we still need to set this when using DD's elasticache module!!!!
-	rgConfig.AtRestEncryptionEnabled = pulumi.Bool(true)
+	rgConfig.AtRestEncryptionEnabled = pulumi.Bool(false)
 
 	// TODO: see if we still need to set this when using DD's elasticache module!!!!
-	rgConfig.AutoMinorVersionUpgrade = pulumi.Bool(true)
+	rgConfig.AutoMinorVersionUpgrade = pulumi.Bool(false)
 
 	rgConfig.AutomaticFailoverEnabled = pulumi.Bool(automaticFailoverEnabled)
 	//rgConfig.AutomaticFailoverEnabled = pulumi.Bool(true)
 
 	// Required
-	rgConfig.Description = pulumi.String("This was a TF stack originally Managed by Terraform, now managed by DD pulumi-projects -- new v17")
+	rgConfig.Description = pulumi.String("This was a stack originally created manually, now managed by DD pulumi-projects - v1")
 
-	rgConfig.NodeType = pulumi.String("cache.r6g.large")
+	rgConfig.NodeType = pulumi.String("cache.t4g.micro")
 
 	rgConfig.NumNodeGroups = pulumi.Int(1)
 
@@ -64,7 +64,8 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 
 	rgConfig.ReplicasPerNodeGroup = pulumi.Int(1)
 
-	rgConfig.ReplicationGroupId = pulumi.String("my-test-222-elasticache-redis-simple")
+	//rgConfig.ReplicationGroupId = pulumi.String("my-test-222-elasticache-redis-simple")
+	rgConfig.ReplicationGroupId = pulumi.String("test-manual-elasticache-rp-1")
 
 	rgConfig.SecurityGroupIds = pulumi.StringArray{
 		pulumi.String("sg-0b39791f9f42c6de8"),
@@ -72,14 +73,16 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 
 	rgConfig.SnapshotRetentionLimit = pulumi.Int(30)
 
-	rgConfig.SubnetGroupName = pulumi.String("my-test-222-elasticache-redis-simple")
+	//rgConfig.SubnetGroupName = pulumi.String("my-test-222-elasticache-redis-simple")
+	rgConfig.SubnetGroupName = pulumi.String("test-elasticache-subnetgroup")
 
 	rgConfig.Tags = pulumi.StringMap{
-		"Name": pulumi.String("my-test-222-elasticache-redis-simple"),
+		//"Name": pulumi.String("my-test-222-elasticache-redis-simple"),
+		"Name": pulumi.String("test-manual-elasticache-rp-1"),
 	}
 
 	// TODO: see if we still need to set this when using DD's elasticache module!!!!
-	rgConfig.TransitEncryptionEnabled = pulumi.Bool(true)
+	rgConfig.TransitEncryptionEnabled = pulumi.Bool(false)
 
 	// TODO: see if we still need to set this when using DD's elasticache module!!!!
 	rgConfig.MultiAzEnabled = pulumi.Bool(multiAzEnabled)
@@ -93,7 +96,8 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 	rgConfig.MaintenanceWindow = pulumi.String(maintenanceWindow)
 	//rgConfig.MaintenanceWindow = pulumi.String("tue:23:30-wed:00:30")
 
-	rgConfig.ParameterGroupName = pulumi.String("my-test-222-elasticache-redis-simple")
+	//rgConfig.ParameterGroupName = pulumi.String("my-test-222-elasticache-redis-simple")
+	rgConfig.ParameterGroupName = pulumi.String("default.redis5.0")
 
 	rgConfig.SnapshotWindow = pulumi.String(snapshotWindow)
 	//rgConfig.SnapshotWindow = pulumi.String("06:00-07:00")
