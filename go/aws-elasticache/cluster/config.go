@@ -65,13 +65,13 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 	rgConfig.ReplicasPerNodeGroup = pulumi.Int(1)
 
 	//rgConfig.ReplicationGroupId = pulumi.String("my-test-222-elasticache-redis-simple")
-	//rgConfig.ReplicationGroupId = pulumi.String("test-manual-elasticache-rp-1")
+	rgConfig.ReplicationGroupId = pulumi.String("test-manual-elasticache-rp-1")
 
 	rgConfig.SecurityGroupIds = pulumi.StringArray{
 		pulumi.String("sg-0b39791f9f42c6de8"),
 	}
 
-	rgConfig.SnapshotRetentionLimit = pulumi.Int(30)
+	rgConfig.SnapshotRetentionLimit = pulumi.Int(0)
 
 	//rgConfig.SubnetGroupName = pulumi.String("my-test-222-elasticache-redis-simple")
 	rgConfig.SubnetGroupName = pulumi.String("test-elasticache-subnetgroup")
@@ -99,8 +99,8 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 	//rgConfig.ParameterGroupName = pulumi.String("my-test-222-elasticache-redis-simple")
 	rgConfig.ParameterGroupName = pulumi.String("default.redis5.0")
 
-	rgConfig.SnapshotWindow = pulumi.String(snapshotWindow)
-	//rgConfig.SnapshotWindow = pulumi.String("06:00-07:00")
+	//rgConfig.SnapshotWindow = pulumi.String(snapshotWindow)
+	rgConfig.SnapshotWindow = pulumi.String("05:30-06:30")
 
 	//// ApplyImmediately
 	//if cfg.GetBool("apply_immediately") {
