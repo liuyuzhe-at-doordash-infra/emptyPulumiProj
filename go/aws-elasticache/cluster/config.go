@@ -93,8 +93,8 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 	rgConfig.EngineVersion = pulumi.String(engineVersion)
 	//rgConfig.EngineVersion = pulumi.String("5.0.6")
 
-	rgConfig.MaintenanceWindow = pulumi.String(maintenanceWindow)
-	//rgConfig.MaintenanceWindow = pulumi.String("tue:23:30-wed:00:30")
+	//rgConfig.MaintenanceWindow = pulumi.String(maintenanceWindow)
+	rgConfig.MaintenanceWindow = pulumi.String("sun:00:30-sun:01:30")
 
 	//rgConfig.ParameterGroupName = pulumi.String("my-test-222-elasticache-redis-simple")
 	rgConfig.ParameterGroupName = pulumi.String("default.redis5.0")
