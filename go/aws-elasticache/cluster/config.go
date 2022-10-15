@@ -53,7 +53,7 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 	//rgConfig.AutomaticFailoverEnabled = pulumi.Bool(true)
 
 	// Required
-	rgConfig.Description = pulumi.String("This was a stack originally created manually, now managed by DD pulumi-projects - v1")
+	rgConfig.Description = pulumi.String("manually created dummy elasticache replication group for testing.")
 
 	rgConfig.NodeType = pulumi.String("cache.t4g.micro")
 
