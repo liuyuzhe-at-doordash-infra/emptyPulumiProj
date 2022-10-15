@@ -65,7 +65,7 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 	rgConfig.ReplicasPerNodeGroup = pulumi.Int(1)
 
 	//rgConfig.ReplicationGroupId = pulumi.String("my-test-222-elasticache-redis-simple")
-	rgConfig.ReplicationGroupId = pulumi.String("test-manual-elasticache-rp-1")
+	//rgConfig.ReplicationGroupId = pulumi.String("test-manual-elasticache-rp-1")
 
 	rgConfig.SecurityGroupIds = pulumi.StringArray{
 		pulumi.String("sg-0b39791f9f42c6de8"),
