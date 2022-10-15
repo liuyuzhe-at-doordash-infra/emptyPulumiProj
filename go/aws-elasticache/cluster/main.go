@@ -94,7 +94,11 @@ func helper(ctx *pulumi.Context,
 
 	opts := make([]pulumi.ResourceOption, 0)
 	//isImport := cfg.GetBool(ResourceImportKey) // TODO: re-enable
-	isImport := true // TODO: for test only
+
+	// ##############################################
+	//isImport := true // TODO: for test only
+	isImport := false // TODO: for test only
+	// ##############################################
 
 	if isImport {
 		//opts = append(opts, pulumi.Import(pulumi.ID(cfg.Require(ResourceImportIdKey))))
