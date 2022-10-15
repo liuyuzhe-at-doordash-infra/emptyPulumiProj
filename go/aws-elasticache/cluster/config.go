@@ -78,7 +78,7 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 
 	rgConfig.Tags = pulumi.StringMap{
 		//"Name": pulumi.String("my-test-222-elasticache-redis-simple"),
-		"Name": pulumi.String("test-manual-elasticache-rp-1"),
+		//"Name": pulumi.String("test-manual-elasticache-rp-1"),
 	}
 
 	// TODO: see if we still need to set this when using DD's elasticache module!!!!
