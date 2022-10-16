@@ -97,8 +97,8 @@ func helper(ctx *pulumi.Context,
 	//isImport := cfg.GetBool(ResourceImportKey) // TODO: re-enable
 
 	// ##############################################
-	isImport := true // TODO: for test only
-	//isImport := false // TODO: for test only
+	//isImport := true // TODO: for test only
+	isImport := false // TODO: for test only
 	// ##############################################
 
 	if isImport {

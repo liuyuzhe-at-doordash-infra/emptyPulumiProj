@@ -54,7 +54,7 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 
 	// Required
 	//rgConfig.Description = pulumi.String("manually created dummy elasticache replication group for testing. - post-importing update v1")
-	rgConfig.Description = pulumi.String("originally created elasticache replication group for testing by k8s pulumi OPERATOR NOT pulumi.")
+	rgConfig.Description = pulumi.String("originally created elasticache replication group for testing by k8s pulumi OPERATOR NOT pulumi - post importing update!!!!!.")
 
 	rgConfig.NodeType = pulumi.String("cache.t4g.micro")
 
