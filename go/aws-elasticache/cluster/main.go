@@ -47,7 +47,7 @@ func (myRealElasticache *MyRealElasticache) MyCreateReplicationGroup(opts []pulu
 		myRealElasticache.ctx,
 		//myRealElasticache.cfg.Require(ResourceNameKey),  // TODO: re-enable
 		//"imported-pulumi-stack-my-test-222-elasticache-redis-simple", // TODO: for test only
-		"imported-test-1-pulumi", // TODO: for test only
+		"test-my-pulumi-created", // TODO: for test only
 		myRealElasticache.rgCfg,
 		opts...)
 	return rg, err
@@ -65,7 +65,8 @@ func main() {
 
 		// define instance of two structs that implement interfaces
 		//myPulumiStruct := &MyRealPulumi{ID: "my-test-222-elasticache-redis-simple"}
-		myPulumiStruct := &MyRealPulumi{ID: "test-manual-elasticache-rp-1"} // pre-existing elasticache resource name
+		//myPulumiStruct := &MyRealPulumi{ID: "test-manual-elasticache-rp-1"} // pre-existing elasticache resource name
+		myPulumiStruct := &MyRealPulumi{ID: "test-pulumi-created"} // create elasticache orignally using pulumi - not used anyway
 		myElasticacheStruct := &MyRealElasticache{
 			ctx:   ctx,
 			rgCfg: rgCfg,

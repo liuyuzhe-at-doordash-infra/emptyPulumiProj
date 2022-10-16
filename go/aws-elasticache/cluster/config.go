@@ -53,7 +53,8 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 	//rgConfig.AutomaticFailoverEnabled = pulumi.Bool(true)
 
 	// Required
-	rgConfig.Description = pulumi.String("manually created dummy elasticache replication group for testing. - post-importing update v1")
+	//rgConfig.Description = pulumi.String("manually created dummy elasticache replication group for testing. - post-importing update v1")
+	rgConfig.Description = pulumi.String("originally created elasticache replication group for testing by pulumi.")
 
 	rgConfig.NodeType = pulumi.String("cache.t4g.micro")
 
@@ -65,7 +66,8 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 	rgConfig.ReplicasPerNodeGroup = pulumi.Int(1)
 
 	//rgConfig.ReplicationGroupId = pulumi.String("my-test-222-elasticache-redis-simple")
-	rgConfig.ReplicationGroupId = pulumi.String("test-manual-elasticache-rp-1")
+	//rgConfig.ReplicationGroupId = pulumi.String("test-manual-elasticache-rp-1")
+	rgConfig.ReplicationGroupId = pulumi.String("test-my-pulumi-created")
 
 	rgConfig.SecurityGroupIds = pulumi.StringArray{
 		pulumi.String("sg-0b39791f9f42c6de8"),
