@@ -66,7 +66,7 @@ func main() {
 		// define instance of two structs that implement interfaces
 		//myPulumiStruct := &MyRealPulumi{ID: "my-test-222-elasticache-redis-simple"}
 		//myPulumiStruct := &MyRealPulumi{ID: "test-manual-elasticache-rp-1"} // pre-existing elasticache resource name
-		myPulumiStruct := &MyRealPulumi{ID: "test-pulumi-created"} // create elasticache orignally using pulumi - not used anyway
+		myPulumiStruct := &MyRealPulumi{ID: "test-my-pulumi-created"} // pre-existing elasticache resource name
 		myElasticacheStruct := &MyRealElasticache{
 			ctx:   ctx,
 			rgCfg: rgCfg,
@@ -97,8 +97,8 @@ func helper(ctx *pulumi.Context,
 	//isImport := cfg.GetBool(ResourceImportKey) // TODO: re-enable
 
 	// ##############################################
-	//isImport := true // TODO: for test only
-	isImport := false // TODO: for test only
+	isImport := true // TODO: for test only
+	//isImport := false // TODO: for test only
 	// ##############################################
 
 	if isImport {
