@@ -47,7 +47,7 @@ func (myRealElasticache *MyRealElasticache) MyCreateReplicationGroup(opts []pulu
 		myRealElasticache.ctx,
 		//myRealElasticache.cfg.Require(ResourceNameKey),  // TODO: re-enable
 		//"imported-pulumi-stack-my-test-222-elasticache-redis-simple", // TODO: for test only
-		"test-my-pulumi-created", // TODO: for test only
+		"test-k8s-pulumi-created", // TODO: for test only
 		myRealElasticache.rgCfg,
 		opts...)
 	return rg, err

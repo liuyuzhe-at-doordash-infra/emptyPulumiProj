@@ -54,7 +54,7 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 
 	// Required
 	//rgConfig.Description = pulumi.String("manually created dummy elasticache replication group for testing. - post-importing update v1")
-	rgConfig.Description = pulumi.String("originally created elasticache replication group for testing by pulumi. - test post-imporint update!!")
+	rgConfig.Description = pulumi.String("originally created elasticache replication group for testing by k8s pulumi OPERATOR NOT pulumi.")
 
 	rgConfig.NodeType = pulumi.String("cache.t4g.micro")
 
@@ -67,7 +67,7 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 
 	//rgConfig.ReplicationGroupId = pulumi.String("my-test-222-elasticache-redis-simple")
 	//rgConfig.ReplicationGroupId = pulumi.String("test-manual-elasticache-rp-1")
-	rgConfig.ReplicationGroupId = pulumi.String("test-my-pulumi-created")
+	rgConfig.ReplicationGroupId = pulumi.String("test-k8s-pulumi-created")
 
 	rgConfig.SecurityGroupIds = pulumi.StringArray{
 		pulumi.String("sg-0b39791f9f42c6de8"),
@@ -78,10 +78,12 @@ func ConfigWithImport(ctx *pulumi.Context) (rgConfig *elasticache.ReplicationGro
 	//rgConfig.SubnetGroupName = pulumi.String("my-test-222-elasticache-redis-simple")
 	rgConfig.SubnetGroupName = pulumi.String("test-elasticache-subnetgroup")
 
-	rgConfig.Tags = pulumi.StringMap{
+	rgConfig.Tags = pulumi.ToStringMap(map[string]string{
 		//"Name": pulumi.String("my-test-222-elasticache-redis-simple"),
 		//"Name": pulumi.String("test-manual-elasticache-rp-1"),
-	}
+		"Name":           "test-k8s-pulumi-created",
+		pulumiManagedTag: "true",
+	})
 
 	// TODO: see if we still need to set this when using DD's elasticache module!!!!
 	rgConfig.TransitEncryptionEnabled = pulumi.Bool(false)
